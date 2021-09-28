@@ -914,7 +914,7 @@ nav {
       .project-wrap {
         display: flex;
         height: 45vh;
-        width: 80vw;
+        width: 100vw;
         align-items: center;
     
         .section {
@@ -972,6 +972,10 @@ nav {
               opacity: 1;
             }
           }
+        }
+
+        @include breakpoint('phablet') {
+          width: 80vw;
         }
       }
     }    
