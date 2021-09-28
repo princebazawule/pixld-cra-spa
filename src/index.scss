@@ -57,6 +57,7 @@ body {
     position: absolute;
     width: 1px;
   }
+}
 
   .home,
   .clients,
@@ -125,7 +126,7 @@ body {
       display: block;
     }
   }
-}
+
 
 
 
@@ -682,6 +683,14 @@ nav {
           animation: bounce 2s infinite;
           font-size: 2rem;
           font-weight: 300;
+        }
+
+        @include breakpoint('tablet') {
+          line-height: 3;
+  
+          &:after {
+            right: -1.75rem;
+          }
         }
 
         @include breakpoint('laptop') {
