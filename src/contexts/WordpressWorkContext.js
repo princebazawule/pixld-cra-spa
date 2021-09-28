@@ -8,7 +8,7 @@ const WordpressWorkContextProvider = (props) => {
     useEffect(() => {
         setTimeout(() => {
             const loadPost = async () => {
-                const response = await fetch('http://pixldinc.link/pixldcms/wp-json/acf/v3/work?page=1&per_page=8')
+                const response = await fetch('https://pixldinc.link/pixldcms/wp-json/acf/v3/work?page=1&per_page=8')
 
                 if(!response.ok) {
                     console.log(`...no posts`)

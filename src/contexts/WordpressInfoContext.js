@@ -8,7 +8,7 @@ const WordpressInfoContextProvider = (props) => {
     useEffect(() => {
         setTimeout(() => {
             const loadPost = async () => {
-                const response = await fetch('http://pixldinc.link/pixldcms/wp-json/acf/v3/pages/22?_embed')
+                const response = await fetch('https://pixldinc.link/pixldcms/wp-json/acf/v3/pages/22?_embed')
     
                 if(!response.ok) {
                     console.log(`...not working`)
