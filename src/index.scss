@@ -66,7 +66,7 @@ body {
     flex-direction: row;
     overflow: hidden;
     scroll-snap-align: start;
-    margin-top: 7rem;
+    margin-top: 11rem;
 
     @include breakpoint('laptop') {
       margin-top: 0;
@@ -573,6 +573,7 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  margin-top: 0;
 
   @include breakpoint('mobileonly') {
     justify-content: center;
@@ -600,10 +601,10 @@ nav {
     z-index: 1;
 
     @include breakpoint('mobileonly') {
-      position: relative;
+      // position: relative;
       text-align: left;
       z-index: 1;
-      margin-top: 20rem;
+      // margin-top: 20rem;
     }
 
     @include breakpoint('tablet') {
@@ -611,22 +612,22 @@ nav {
     }
 
     @include breakpoint('desktop') {
-      width: 40%;
+      width: 45%;
     }
   
     h1 {
       font-family: 'Rubik', sans-serif;
-      font-size: clamp(4rem, 9vw, 10rem);
+      font-size: clamp(3.5rem, 9vw, 10rem);
       max-width: 25rem;
       font-weight: 800;
       margin: 0px;
       text-transform: lowercase;
-      letter-spacing: -0.25rem;
+      letter-spacing: -0.2rem;
       line-height: 0.8;
       padding-bottom: 4rem;
 
       @include breakpoint('mobileonly') {
-        max-width: 16rem;
+        // max-width: 16rem;
         padding-bottom: 1.5rem;
       }
 
@@ -638,6 +639,11 @@ nav {
         font-size: clamp(3rem, 8vw, 10rem);
         letter-spacing: -0.5rem;
         max-width: none;
+      }
+
+      span {
+        text-transform: none;
+        font-size: clamp(3rem, 7vw, 9rem);
       }
     }
   
@@ -663,19 +669,27 @@ nav {
         letter-spacing: -0.05rem;
         font-weight: 700;
         padding: 1rem 4.5rem 1rem 2rem;
-        line-height: 2;
+        line-height: 3.5;
 
         &:after {
           position: absolute;
           content: '›';
           top: 20%;
-          right: -1rem;
+          right: -2.5rem;
           width: 40px;
           height: 40px;
           transform-origin: left;
           animation: bounce 2s infinite;
           font-size: 2rem;
           font-weight: 300;
+        }
+
+        @include breakpoint('laptop') {
+          line-height: 2.4;
+  
+          &:after {
+            right: -1rem;
+          }
         }
       }
 
@@ -714,17 +728,18 @@ nav {
 
   h1 {
     font-family: 'Rubik', sans-serif;
-    font-size: clamp(4rem, 9vw, 10rem);
+    font-size: clamp(3.5rem, 9vw, 10rem);
     font-weight: 800;
     margin: 0px;
     text-transform: lowercase;
-    letter-spacing: -0.5rem;
+    letter-spacing: -0.2rem;
     line-height: 0.8;
-    max-width: 15rem;
+    // max-width: 15rem;
     padding-bottom: 4rem;
 
     @include breakpoint('tablet') {
       max-width: 40rem;
+      letter-spacing: -0.5rem;
     }
 
     @include breakpoint('laptop') {
@@ -845,17 +860,18 @@ nav {
 
   h1 {
     font-family: 'Rubik', sans-serif;
-    font-size: clamp(4rem, 9vw, 10rem);
+    font-size: clamp(3.5rem, 9vw, 10rem);
     font-weight: 800;
     margin: 0px;
     text-transform: lowercase;
-    letter-spacing: -0.5rem;
+    letter-spacing: -0.2rem;
     line-height: 0.8;
-    max-width: 15rem;
+    // max-width: 15rem;
     padding-bottom: 4rem;
 
     @include breakpoint('tablet') {
       max-width: 40rem;
+      letter-spacing: -0.5rem;
     }
 
     @include breakpoint('laptop') {
@@ -973,17 +989,18 @@ nav {
 
   h1 {
     font-family: 'Rubik', sans-serif;
-    font-size: clamp(4rem, 9vw, 10rem);
+    font-size: clamp(3.5rem, 9vw, 10rem);
     font-weight: 800;
     margin: 0px;
     text-transform: lowercase;
-    letter-spacing: -0.5rem;
+    letter-spacing: -0.2rem;
     line-height: 0.8;
-    max-width: 15rem;
+    // max-width: 15rem;
     padding-bottom: 4rem;
 
     @include breakpoint('tablet') {
       max-width: 40rem;
+      letter-spacing: -0.5rem;
     }
 
     @include breakpoint('laptop') {
@@ -1132,7 +1149,7 @@ body {
 
 
   nav {
-    background: rgba(17, 22, 25, 0.25);
+    background: rgba(17, 22, 25, 1);
 
     .pixld-logo-image {
       fill: #879ead;
@@ -1423,7 +1440,7 @@ body {
 
   
   nav {
-    background: rgba(245, 245, 245, 0.25);
+    background: rgba(245, 245, 245, 1);
 
     .pixld-logo-image {
       fill: #604B8F;

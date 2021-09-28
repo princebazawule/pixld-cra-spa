@@ -43,7 +43,7 @@ const Header = () => {
                         {/* <Navbar /> */}
                         
                         <div className='home-container'>
-                            <h1>who r we?</h1>
+                            <h1>who's <span>PixlD</span>?</h1>
                             <div className="profile">
                                 {acf && ( 
                                     <>
