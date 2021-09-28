@@ -1077,6 +1077,11 @@ nav {
   align-items: center;
   font-size: 0.95rem;
   font-weight: 300;
+  align-items: flex-start;
+
+  @include breakpoint('phablet') {
+    align-items: center;
+  }
 }
 
 
@@ -1381,6 +1386,7 @@ body {
 
   .footer {
     color: #d5d5d5;
+    background: #151b20;
   }
 }
 
@@ -1673,5 +1679,6 @@ body {
 
   .footer {
     color: #2F3D46;
+    background: #ffffff;
   }
 }
