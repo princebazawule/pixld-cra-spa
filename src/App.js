@@ -17,6 +17,7 @@ function App() {
       <Helmet>
         {/* Primary Meta Tags */}
         <title>PixlD - We build beautiful websites</title>
+        <link rel="canonical" href="https://pixldinc.com" />
         <meta name="title" content="PixlD - We build beautiful websites" />
         <meta name="description" content="We are a boutique, web design & development firm based in sunny Barbados" />
 
