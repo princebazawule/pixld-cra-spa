@@ -1,5 +1,6 @@
 import React from "react"
 import {Helmet} from "react-helmet"
+import ReactGA from 'react-ga'
 import Clients from "./components/Clients"
 import Connect from "./components/Connect"
 import Footer from "./components/Footer"
@@ -10,6 +11,10 @@ import ThemeContextProvider from "./contexts/ThemeContext"
 import WordpressClientContextProvider from "./contexts/WordpressClientContext"
 import WordpressInfoContextProvider from "./contexts/WordpressInfoContext"
 import WordpressWorkContextProvider from "./contexts/WordpressWorkContext"
+import RouteChangeTracker from "./components/RouteChangeTracker"
+
+const TRACKING_ID = "UA-6814118-1"
+ReactGA.initialize(TRACKING_ID)
 
 function App() {
   return (
@@ -56,6 +61,7 @@ function App() {
 
         <Footer />
       </ThemeContextProvider>
+      <RouteChangeTracker />
     </div>
   );
 }
