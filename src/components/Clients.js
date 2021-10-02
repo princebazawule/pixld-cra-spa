@@ -32,8 +32,16 @@ const Clients = () => {
                         <div className='client-list'>
                             {displayedPosts && (displayedPosts.map((post) => {
                                 return (
-                                    <div key={post.id} className='client-item'>
-                                        <img src={post.acf.logo} alt={post.acf.client_name} />
+                                    <div 
+                                        key={post.id} 
+                                        className='client-item'>
+                                            <img
+                                                src={post.acf.logo.sizes.thumbnail} 
+                                                srcSet={
+                                                        `${post.acf.logo.sizes.medium} 150w, 
+                                                        ${post.acf.logo.sizes.large} 300w, 
+                                                        ${post.acf.logo.sizes['1536x1536']} 494w`} 
+                                                alt={post.acf.client_name} />
                                     </div>
                                 )
                             }))}

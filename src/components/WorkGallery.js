@@ -5,8 +5,8 @@ const WorkGallery = ({ onClick, activeIndex, post }) => {
 
     const project_shots = post.acf.project_shots
 
-    console.log(post)
-    console.log(project_shots)
+    // console.log(post)
+    // console.log(project_shots)
 
     const closeGallery = () => {
         onClick(null);
@@ -54,7 +54,17 @@ const WorkGallery = ({ onClick, activeIndex, post }) => {
                     <div className="gallery-scroller">
                         {project_shots.map((shot, index) => {
                             return (
-                                <div className='colored-card'><img className='photo' key={index} src={shot.shots} alt={post.acf.client} /></div>
+                                <div className='colored-card'>
+                                    <img
+                                        key={index}
+                                        className='photo'
+                                        src={shot.shots.sizes.thumbnail} 
+                                        srcSet={
+                                                `${shot.shots.sizes.medium} 300w, 
+                                                ${shot.shots.sizes.large} 640w, 
+                                                ${shot.shots.sizes['1536x1536']} 1000w`} 
+                                        alt={post.acf.client} />
+                                </div>
                             )
                         })}
                     </div>

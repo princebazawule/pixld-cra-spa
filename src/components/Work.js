@@ -49,7 +49,13 @@ const Work = () => {
                                                         <p>{post.acf.client} <span>{post.acf.project_type}</span></p>
                                                     </div>
                                                     <div className="overlay"></div>
-                                                    <img src={post.acf.splash} alt={post.acf.client} />
+                                                    <img
+                                                        src={post.acf.splash.sizes.thumbnail} 
+                                                        srcSet={
+                                                                `${post.acf.splash.sizes.medium} 640w, 
+                                                                ${post.acf.splash.sizes.large} 960w, 
+                                                                ${post.acf.splash.sizes['1536x1536']} 2048w`} 
+                                                        alt={post.acf.client} />
                                                 </div>
                                                 
                                                 {activeIndex !== null && activeIndex === index ? (<WorkGallery key={index} activeIndex={activeIndex} onClick={closeGallery} post={post} />) : ''}

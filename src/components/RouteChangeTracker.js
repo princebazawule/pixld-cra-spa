@@ -6,8 +6,8 @@ import ReactGA from "react-ga"
 const RouteChangeTracker = ({ history }) => {
 
     history.listen((location, action) => {
-        ReactGA.set({ page: location.pathname });
-        ReactGA.pageview(location.pathname);
+        ReactGA.set({ page: history.location.pathname + history.location.hash });
+        ReactGA.pageview(history.location.pathname + history.location.hash);
     })
 
     return ( 

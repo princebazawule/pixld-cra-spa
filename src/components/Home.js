@@ -2,6 +2,7 @@ import React, { Suspense, lazy, useContext } from "react"
 import { Helmet } from "react-helmet"
 import { NavHashLink as Link } from 'react-router-hash-link'
 import { useInView } from 'react-intersection-observer'
+import ReactGA from "react-ga"
 // import FadeIn from 'react-fade-in'
 import { ThemeContext } from '../contexts/ThemeContext'
 import { WordpressInfoContext } from "../contexts/WordpressInfoContext"
@@ -18,6 +19,13 @@ const Header = () => {
         threshold: 0.25,
         // triggerOnce: true,
     });
+
+    const sendButtonClickEvent = () => {
+        ReactGA.event({
+            category: 'Button Click',
+            action: 'Get in Touch'
+        });
+    }
 
     const theme = useContext(ThemeContext)
     const isDarkTheme = theme.state.isDarkTheme
@@ -49,7 +57,7 @@ const Header = () => {
                                     <>
                                         <div dangerouslySetInnerHTML={ { __html: acf.mini_profile}} ></div>
                                         <div className="get-in-touch">
-                                            <Link to='/#connect' title='get in touch'>get in touch</Link>
+                                            <Link to='/#connect' title='get in touch' onClick={sendButtonClickEvent}>get in touch</Link>
                                         </div>
                                     </>
                                  )}

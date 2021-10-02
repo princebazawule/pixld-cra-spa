@@ -58,9 +58,10 @@ function App() {
         <WordpressInfoContextProvider>
           <Connect />
         </WordpressInfoContextProvider>
-
+        
         <Footer />
       </ThemeContextProvider>
+
       <RouteChangeTracker />
     </div>
   );

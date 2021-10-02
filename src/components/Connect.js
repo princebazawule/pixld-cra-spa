@@ -1,11 +1,19 @@
 import React, { Suspense, lazy, useContext } from 'react'
 import { useInView } from 'react-intersection-observer'
+import ReactGA from "react-ga"
 import { WordpressInfoContext } from '../contexts/WordpressInfoContext'
 import SkeletonConnect from '../skeletons/SkeletonConnect'
 
 const Overlay = lazy(() => import('./Overlay'))
 
 const Connect = () => {
+
+    const sendLinkClickEvent = (key) => {
+        ReactGA.event({
+            category: 'Link Click',
+            action: key
+        });
+    }
 
     const { ref, inView } = useInView({
         threshold: 0.25,
@@ -35,9 +43,9 @@ const Connect = () => {
 
                                 {acf && (
                                     <ul>
-                                        <li><a href={acf.twitter} target='_blank' rel='noreferrer'>twitter</a></li>
-                                        <li><a href={acf.facebook} target='_blank' rel='noreferrer'>facebook</a></li>
-                                        <li><a href={acf.linkedin} target='_blank' rel='noreferrer'>linkedin</a></li>
+                                        <li><a href={acf.twitter} target='_blank' rel='noreferrer' onClick={() => sendLinkClickEvent('twitter')} title={'twitter'}>twitter</a></li>
+                                        <li><a href={acf.facebook} target='_blank' rel='noreferrer' onClick={() => sendLinkClickEvent('facebook')} title={'facebook'}>facebook</a></li>
+                                        <li><a href={acf.linkedin} target='_blank' rel='noreferrer' onClick={() => sendLinkClickEvent('linkedin')} title={'linkedin'}>linkedin</a></li>
                                     </ul>
                                 )}
                                 {!acf && [1,2,3].map((n) => <SkeletonConnect key={n} />)}
@@ -48,8 +56,8 @@ const Connect = () => {
                                 
                                 {acf && (
                                     <ul>
-                                        <li><a href={acf.email} target='_blank' rel='noreferrer'>hello@pixldinc.com</a></li>
-                                        <li><a href={acf.skype} target='_blank' rel='noreferrer'>skype call</a></li>
+                                        <li><a href={acf.email} target='_blank' rel='noreferrer' onClick={() => sendLinkClickEvent('email')} title={'email'}>hello@pixldinc.com</a></li>
+                                        <li><a href={acf.skype} target='_blank' rel='noreferrer' onClick={() => sendLinkClickEvent('skype')} title={'skype'}>skype call</a></li>
                                     </ul>
                                 )}
                                 {!acf && [1,2].map((n) => <SkeletonConnect key={n} />)}
