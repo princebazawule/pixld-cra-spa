@@ -214,6 +214,7 @@ body {
         align-items: flex-start;
         height: 70vh;
         -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
        
        /* Enable Safari touch scrolling physics which is needed for scroll snap */
        -webkit-overflow-scrolling: touch;
@@ -300,8 +301,16 @@ body {
 }
 
 .App {
-  scroll-snap-type: y mandatory;
-  // overflow-y: scroll;
+
+  @include breakpoint('mobileonly') {
+    // scroll-snap-type: y mandatory;
+    // scroll-snap-type: proximity;
+    height: 100vh;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y proximity;
+    scroll-snap-align: start;
+    overflow-y: scroll;
+  }
 }
 
 
