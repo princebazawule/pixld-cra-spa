@@ -303,8 +303,6 @@ body {
 .App {
 
   @include breakpoint('mobileonly') {
-    // scroll-snap-type: y mandatory;
-    // scroll-snap-type: proximity;
     height: 100vh;
     scroll-snap-points-y: repeat(100vh);
     scroll-snap-type: y proximity;

@@ -8,6 +8,8 @@ import { WordpressInfoContext } from "../contexts/WordpressInfoContext"
 import SkeletonHome from '../skeletons/SkeletonHome'
 
 
+// import Navbar from "./Navbar"
+
 const Overlay = lazy(() => import('./Overlay'))
 
 const Header = () => {
@@ -34,11 +36,8 @@ const Header = () => {
             <Helmet>
                 <body className={`${isDarkTheme ? "theme-dark" : "theme-light"}`} />
             </Helmet>
- 
-            <div id='home' ref={ref} className={`home fade-in-section ${ inView ? 'is-visible' : '' }`}>
-                <Suspense fallback={<div className='loading'>Loading...</div>}>
-                    <Overlay title='about' />
-                </Suspense>
+            
+            <div id='home' ref={ref} className={`home fade-in-section ${ inView ? 'is-visible' : '' }`}>  
                 
                 <div className='home-container'>
                     <h1>who's <span>PixlD</span>?</h1>
@@ -54,7 +53,10 @@ const Header = () => {
                         {!acf && [1].map((n) => <SkeletonHome key={n} />)}
                     </div>
                 </div>
-                
+
+                <Suspense fallback={<div className='loading'>Loading...</div>}>
+                    <Overlay title='about' />
+                </Suspense>
             </div>
         </>
      )
