@@ -302,13 +302,13 @@ body {
 
 .App {
 
-  @include breakpoint('mobileonly') {
-    height: 100vh;
-    scroll-snap-points-y: repeat(100vh);
-    scroll-snap-type: y proximity;
-    scroll-snap-align: start;
-    overflow-y: scroll;
-  }
+  // @include breakpoint('mobileonly') {
+  //   height: 100vh;
+  //   scroll-snap-points-y: repeat(100vh);
+  //   scroll-snap-type: y proximity;
+  //   scroll-snap-align: start;
+  //   overflow-y: scroll;
+  // }
 }
 
 
