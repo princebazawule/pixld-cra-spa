@@ -1,5 +1,4 @@
-import React, { Fragment, Suspense, lazy, useState, useContext } from 'react'
-import { useInView } from 'react-intersection-observer'
+import React, { Fragment, Suspense, lazy, useContext, useEffect, useState, useRef } from "react"
 import { WordpressWorkContext } from '../contexts/WordpressWorkContext'
 import SkeletonWork from '../skeletons/SkeletonWork'
 import WorkGallery from './WorkGallery'
@@ -16,20 +15,37 @@ const Work = () => {
 
     const closeGallery = (newValue) => {
         setActiveIndex(newValue);
-      }
+    }
 
-    const { ref, inView } = useInView({
-        threshold: 0.25,
-        // triggerOnce: true,
-    });
-
+    const [isVisible, setVisible] = useState(false)
+    const domRef = useRef()
 
     const { posts } = useContext(WordpressWorkContext)
     const displayedPosts = posts.filter(post => post.acf.display)
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            // console.log(`entry`, entry, `is = ${entry.isIntersecting}`)
+            setVisible(entry.isIntersecting)
+          })
+            // entries.forEach(entry => {
+            //     if (entry.isIntersecting) {
+            //         // console.log(`entry`, entry, `is = ${entry.isIntersecting}`)
+            //         setVisible(entry.isIntersecting);
+            //     }
+            // })
+        })
+    
+        const { current } = domRef;
+        observer.observe(current);
+    
+        return () => observer.unobserve(current);
+    }, [])
+
 
     return ( 
-        <div id="work" ref={ref} className={`work fade-in-section ${ inView ? 'is-visible' : '' }`}>
+        <div id="work" ref={domRef} className={`work fade-in-section ${ isVisible ? 'is-visible' : '' }`}>
             <>
                 <div className="work-container">
                     <h1>selected work</h1>
@@ -60,8 +76,10 @@ const Work = () => {
                                 }))}
                                 {displayedPosts.length < 1 ? ([1,2,3,4,5].map((n) => {
                                     return (
-                                        <div className="section shell">
-                                            <SkeletonWork key={n} />
+                                        <div 
+                                            key={n}
+                                            className="section shell">
+                                            <SkeletonWork />
                                         </div>
                                     )
                                 })) : ''}

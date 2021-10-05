@@ -67,7 +67,9 @@ body {
     flex-direction: row;
     overflow: hidden;
     scroll-snap-align: start;
+    min-height: 100vh;
     margin-top: 11rem;
+    margin-bottom: 1rem;
 
     @include breakpoint('laptop') {
       margin-top: 0;
@@ -576,7 +578,7 @@ nav {
 
 .home {
   width: 100%;
-  min-height: 100vh;
+  // min-height: 100vh;
   position: relative;
   flex-direction: column;
   align-items: center;
@@ -726,7 +728,7 @@ nav {
 
 .clients {
   width: 100%;
-  min-height: 100vh;
+  // min-height: 100vh;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -855,7 +857,7 @@ nav {
 
 .work {
   width: 100%;
-  min-height: 100vh;
+  // min-height: 100vh;
   box-sizing: border-box;
   font-family: 'Rubik', sans-serif;
   display: flex;
@@ -995,7 +997,7 @@ nav {
 
 .connect {
   width: 100%;
-  min-height: 100vh;
+  // min-height: 100vh;
   box-sizing: border-box;
   display: flex;
   align-items: center;
