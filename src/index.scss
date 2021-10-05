@@ -217,6 +217,7 @@ body {
        
        /* Enable Safari touch scrolling physics which is needed for scroll snap */
        -webkit-overflow-scrolling: touch;
+       scroll-behavior: smooth;
   
        &.no-snap {
         scroll-snap-type: none;
