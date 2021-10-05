@@ -9,7 +9,6 @@ const Clients = () => {
 
     const { ref, inView } = useInView({
         threshold: 0.25,
-        // triggerOnce: true,
     });
 
     const { posts } = useContext(WordpressClientContext)

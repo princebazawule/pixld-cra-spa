@@ -6,8 +6,6 @@ const ThemeToggle = () => {
     const theme = useContext(ThemeContext)
     const isDarkTheme = theme.state.isDarkTheme
 
-    // console.log(isDarkTheme)
-
     const handleThemeSwitch = () => {
         if (isDarkTheme) {
             theme.dispatch({ type: "LIGHT_MODE" })
@@ -17,7 +15,6 @@ const ThemeToggle = () => {
             localStorage.setItem('dark', true)
         }
     }
-
 
     return (
         <>

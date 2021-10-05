@@ -16,17 +16,14 @@ const Work = () => {
 
     const closeGallery = (newValue) => {
         setActiveIndex(newValue);
-      }
+    }
 
     const { ref, inView } = useInView({
         threshold: 0.25,
-        // triggerOnce: true,
     });
-
 
     const { posts } = useContext(WordpressWorkContext)
     const displayedPosts = posts.filter(post => post.acf.display)
-
 
     return ( 
         <div id="work" ref={ref} className={`work fade-in-section ${ inView ? 'is-visible' : '' }`}>

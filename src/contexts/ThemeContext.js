@@ -25,8 +25,6 @@ const ThemeContextProvider = (props) => {
     useEffect(() => {
         const storedTheme = localStorage.getItem('dark')
         const themeSwitch = document.querySelector('#slider')
-        // console.log(themeSwitch)
-
 
         if(themeSwitch) {
             if(storedTheme !== null && storedTheme === 'true') {
