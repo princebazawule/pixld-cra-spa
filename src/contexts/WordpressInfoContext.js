@@ -19,7 +19,7 @@ const WordpressInfoContextProvider = (props) => {
             }
     
             loadPost()
-        }, 0)
+        }, 1000)
     }, [])
 
     // console.log(items)

@@ -19,7 +19,7 @@ const WordpressWorkContextProvider = (props) => {
             }
 
             loadPost()
-        }, 0)
+        }, 1000)
     }, [])
 
     // console.log(posts)
