@@ -61,7 +61,7 @@ const Work = () => {
                                     }))}
                                     {displayedPosts.length < 1 ? ([1,2,3,4,5].map((n) => {
                                         return (
-                                            <div className="section shell">
+                                            <div key={n} className="section shell">
                                                 <SkeletonWork key={n} />
                                             </div>
                                         )

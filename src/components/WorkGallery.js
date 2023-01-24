@@ -46,7 +46,7 @@ const WorkGallery = ({ onClick, activeIndex, post }) => {
                     <div className="gallery-scroller">
                         {project_shots.map((shot, index) => {
                             return (
-                                <div className='colored-card'>
+                                <div key={index} className='colored-card'>
                                     <img
                                         key={index}
                                         className='photo'

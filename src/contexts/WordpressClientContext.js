@@ -8,7 +8,7 @@ const WordpressClientContextProvider = (props) => {
     useEffect(() => {
         setTimeout(() => {
             const loadPost = async () => {
-                const response = await fetch('https://pixldinc.link/pixldcms/wp-json/acf/v3/clients?page=1&per_page=15')
+                const response = await fetch('https://pixldinc.link/cms/pixldcms/wp-json/acf/v3/clients?page=1&per_page=15')
 
                 if(!response.ok) {
                     console.log(`...not working`)

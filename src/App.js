@@ -31,14 +31,14 @@ function App() {
         <meta name="og:url" content="https://pixldinc.com/" />
         <meta name="og:title" content="PixlD - We build beautiful websites" />
         <meta name="og:description" content="We are a boutique, web design & development firm based in sunny Barbados" />
-        <meta name="og:image" content="https://pixldinc.link/pixldcms/assets/screenshot.png" />
+        <meta name="og:image" content="https://pixldinc.link/cms/pixldcms/assets/screenshot.png" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://pixldinc.com/" />
         <meta name="twitter:title" content="PixlD - We build beautiful websites" />
         <meta name="twitter:description" content="We are a boutique, web design & development firm based in sunny Barbados" />
-        <meta name="twitter:image" content="https://pixldinc.link/pixldcms/assets/screenshot.png" />
+        <meta name="twitter:image" content="https://pixldinc.link/cms/pixldcms/assets/screenshot.png" />
       </Helmet>
 
       <ThemeContextProvider>

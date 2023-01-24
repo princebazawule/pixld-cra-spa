@@ -46,7 +46,7 @@ const Clients = () => {
                             }))}
                             {displayedPosts.length < 1 ? ([1,2,3,4,5,6,7,8,9,10,11,12].map((n) => {
                                 return (
-                                    <div className="client-item shell">
+                                    <div key={n} className="client-item shell">
                                         <SkeletonClients key={n} />
                                     </div>
                                 )
